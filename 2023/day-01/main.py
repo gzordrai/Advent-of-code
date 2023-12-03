@@ -1,3 +1,4 @@
+from os.path import dirname, join
 from typing import Callable
 
 DIGITS: list[str] = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
@@ -47,7 +48,7 @@ def parse_lines(parser: Callable[[str], list[int]], lines: list[str]) -> list[in
     return ret
 
 if __name__ == "__main__":
-    with open("./input.txt") as file:
+    with open(join(dirname(__file__), "input.txt")) as file:
         data: str = file.read()
         lines: list[str] = data.splitlines()
 
